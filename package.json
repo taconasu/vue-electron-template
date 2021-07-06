@@ -1,0 +1,45 @@
+{
+  "name": "vue-electron-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "node ./bin/build.js",
+    "start": "node ./bin/build.js && node dist/cli.js start",
+    "release": "node ./bin/build.js && node dist/cli.js release",
+    "lint": "eslint --ext .ts,vue --ignore-path .gitignore ."
+  },
+  "author": "smichr <smi.git.se@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "electron-store": "^8.0.0",
+    "vue": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "@vitejs/plugin-vue": "^1.2.4",
+    "@vue/compiler-sfc": "^3.1.4",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "electron": "^13.1.5",
+    "electron-builder": "^22.11.7",
+    "esbuild": "^0.12.14",
+    "eslint": "^7.30.0",
+    "eslint-plugin-vue": "^7.12.1",
+    "husky": "^7.0.0",
+    "stylus": "^0.54.8",
+    "typescript": "^4.3.5",
+    "vite": "^2.3.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix"
+  }
+}
